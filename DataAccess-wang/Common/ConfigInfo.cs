@@ -16,9 +16,8 @@ namespace DataAccess_wang.Common
         //构造函数，读取配置文件中的信息，给属性赋值
         public void ConfigInfo1()
         {
-            string s = ConfigurationManager.AppSettings["key"];
-            string ss = ConfigurationManager.ConnectionStrings["connectString"].ToString();
-            NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("Monitor");
+            //string s = ConfigurationManager.AppSettings["key1"];
+            NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("TestGroup/Monitor");
             //string con = ConfigurationManager.GetSection("connectionStrings").ToString();
             //ConnectionString = config["connectiongString"];
             //ConnectionString = con;
