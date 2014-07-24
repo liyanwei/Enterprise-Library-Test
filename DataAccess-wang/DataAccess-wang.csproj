@@ -35,12 +35,13 @@
     <Reference Include="HEAO.WORK.Web.EntpriseLibrary">
       <HintPath>D:\HEAOCommon\HEAO.WORK.Web.EntpriseLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="HEAO.WORK.Web.EntpriseLibrary.NF4">
-      <HintPath>D:\HEAOCommon\HEAO.WORK.Web.EntpriseLibrary.NF4.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\HEAOCommon\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -56,16 +57,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ConfigInfo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DataAccess\BaseDbHelper.cs" />
+    <Compile Include="DataAccessForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DataAccessForm.Designer.cs">
+      <DependentUpon>DataAccessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSet_College.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_College.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DataAccessForm.resx">
+      <DependentUpon>DataAccessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +83,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSets\DataSet_College.xsc">
+      <DependentUpon>DataSet_College.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSet_College.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_College.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSet_College.xss">
+      <DependentUpon>DataSet_College.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

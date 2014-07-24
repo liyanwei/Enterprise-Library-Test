@@ -8,7 +8,7 @@ namespace DataAccess_wang.Common
     class ConfigInfo
     {
         //连接字符串的名字
-        public string ConnectionString { get; private set; }
+        public string DbConfig { get; private set; }
 
         //类的实例
         public static ConfigInfo Instance = new ConfigInfo();
@@ -19,7 +19,7 @@ namespace DataAccess_wang.Common
             //string s = ConfigurationManager.AppSettings["key1"];
             var config = (NameValueCollection)ConfigurationManager.GetSection("TestGroup/Monitor");
             string t = config["DBConfig"];
-            ConnectionString =t ?? "connectString" ;//: t;
+            DbConfig = t ?? "connectString";//: t;
         }
 
 
