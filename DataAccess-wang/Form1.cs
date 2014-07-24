@@ -21,10 +21,6 @@ namespace DataAccess_wang
         private void button1_Click(object sender, EventArgs e)
         {
             string d = ConfigInfo.Instance.ConnectionString;
-
-
-            ConfigInfo a = new ConfigInfo();
-            a.ConfigInfo1();
             MessageBox.Show(d);
         }
     }

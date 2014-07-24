@@ -7,22 +7,19 @@ namespace DataAccess_wang.Common
 {
     class ConfigInfo
     {
-        //连接字符串
-        public string ConnectionString { get; set; }
+        //连接字符串的名字
+        public string ConnectionString { get; private set; }
 
         //类的实例
         public static ConfigInfo Instance = new ConfigInfo();
 
         //构造函数，读取配置文件中的信息，给属性赋值
-        public void ConfigInfo1()
+        private  ConfigInfo()
         {
             //string s = ConfigurationManager.AppSettings["key1"];
-            NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("TestGroup/Monitor");
-            //string con = ConfigurationManager.GetSection("connectionStrings").ToString();
-            //ConnectionString = config["connectiongString"];
-            //ConnectionString = con;
+            var config = (NameValueCollection)ConfigurationManager.GetSection("TestGroup/Monitor");
             string t = config["DBConfig"];
-            ConnectionString = string.IsNullOrEmpty(t) ? "connectString" : t;
+            ConnectionString =t ?? "connectString" ;//: t;
         }
 
 
