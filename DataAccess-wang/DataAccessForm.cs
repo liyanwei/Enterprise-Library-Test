@@ -25,6 +25,7 @@ namespace DataAccess_wang
         {
             var college = new DataSet_College();
             BaseDB Db = BaseDbHelper.GetDefaultDb();
+
             Db.GetProcCommand("usp_College_LoadAll");
             Db.BaseFillData(college,college.College.TableName);
 
